@@ -1,6 +1,6 @@
 #include "AddAnAuthor.h"
 
-AddAnAuthor::AddAnAuthor(const std::wstring i_name, Library* i_pLibrary) :
+AddAnAuthor::AddAnAuthor(const std::wstring i_name, std::shared_ptr<Library> i_pLibrary) :
 	Menu(i_name,i_pLibrary), m_sMenuTitle(i_name), m_pLibrary(i_pLibrary)
 {
 }
@@ -15,5 +15,5 @@ void AddAnAuthor::show()
 	std::cout << "Author has been added to the library!" << std::endl;
 	std::cout << "Press anything to go back to main menu..." << std::endl;
 	_getch();
-	
+
 }

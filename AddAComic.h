@@ -4,11 +4,11 @@ class AddAComic :
     public Menu
 {
 public:
-    AddAComic(const std::wstring i_name, Library* i_pLibrary);
+    AddAComic(const std::wstring i_name, std::shared_ptr<Library> i_pLibrary);
     void show() override;
 
 private:
     std::wstring m_sMenuTitle;
-    Library* m_pLibrary;
+    std::shared_ptr<Library> m_pLibrary;
 };
 

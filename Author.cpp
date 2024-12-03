@@ -22,6 +22,6 @@ void Author::displayWorks() const
         }
     }
     else {
-        std::cout << "[ AUTHOR :" << name << " ] :\n - No works has been submitted yet - \n";
+        std::cout << "[ AUTHOR :" << name << " ] :\n - No works have been submitted yet - \n";
     }
 }

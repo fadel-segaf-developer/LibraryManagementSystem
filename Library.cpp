@@ -2,25 +2,25 @@
 
 Library::~Library()
 {
-    for (auto& pair : authors)
-        delete pair.second;
     for (auto book : books)
         delete book;
     for (auto comic : comics)
         delete comic;
 }
 
-Author* Library::addAuthor(const std::string& authorName)
+std::unique_ptr<Author>& Library::addAuthor(const std::string& authorName)
 {
     if (authors.find(authorName) == authors.end()) {
-        authors[authorName] = new Author(authorName);
+        //authors[authorName] = new Author(authorName);
+        authors[authorName] = std::make_unique<Author>(authorName);
     }
     return authors[authorName];
 }
 
 bool Library::addLibraryItem(std::unique_ptr<LibraryItem> item, const std::string& authorName)
 {
-    Author* author = addAuthor(authorName);
+    
+    std::unique_ptr<Author>& author = addAuthor(authorName);
     if (author->addWork(std::move(item))) {
         return true;
     }

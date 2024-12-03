@@ -1,7 +1,7 @@
 #include "AddAComic.h"
 
 
-AddAComic::AddAComic(const std::wstring i_name, Library* i_pLibrary) :
+AddAComic::AddAComic(const std::wstring i_name, std::shared_ptr<Library> i_pLibrary) :
 	Menu(i_name, i_pLibrary), m_sMenuTitle(i_name), m_pLibrary(i_pLibrary)
 {
 }

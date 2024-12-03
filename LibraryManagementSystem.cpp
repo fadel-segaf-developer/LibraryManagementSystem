@@ -15,13 +15,13 @@ int input;
 int activeMenuIndex = 99;
 bool firstInput = false;
 bool initDone = false;
-Library* libraryPtr = NULL;
+std::shared_ptr<Library> libraryPtr = NULL;
 
 
 
-void Init()
+void LibraryManagementSystem::Init()
 {
-    libraryPtr = new Library();
+    libraryPtr = std::make_shared<Library>();
 
     //Initial Data for example
     // Create and add a book
@@ -47,7 +47,7 @@ void Init()
     Menu::AddNewMenu(new FindBookByAuthor(L"Search for books by an author", libraryPtr));
  }
 
-void MainMenu()
+void LibraryManagementSystem::MainMenu()
 {
     activeMenuIndex = 99;
     clearScreen();
@@ -80,7 +80,7 @@ void MainMenu()
     std::wcout << std::endl<< "Enter menu index : ";
 }
 
-void UserInput()
+void LibraryManagementSystem::UserInput()
 {
     if (activeMenuIndex == 99)
     {
@@ -126,16 +126,16 @@ void UserInput()
 
 int main()
 {
-    Init();
+    LibraryManagementSystem::Init();
     while (true)
     {
-        MainMenu();
-        UserInput();
+        LibraryManagementSystem::MainMenu();
+        LibraryManagementSystem::UserInput();
     }
     
 }
 
-void clearScreen() {
+void LibraryManagementSystem::clearScreen() {
 #ifdef _WIN32
     system("cls"); // Windows
 #else

@@ -5,7 +5,7 @@ class MainMenu :
     public Menu
 {
 public:
-    MainMenu(const std::wstring i_name, Library* i_pLibrary);
+    MainMenu(const std::wstring i_name, std::shared_ptr<Library> i_pLibrary);
 
     void show() override;
 

@@ -1,7 +1,7 @@
 #include "AddABook.h"
 
 
-AddABook::AddABook(const std::wstring i_name, Library* i_pLibrary) :
+AddABook::AddABook(const std::wstring i_name, std::shared_ptr<Library> i_pLibrary) :
 	Menu(i_name, i_pLibrary), m_sMenuTitle(i_name), m_pLibrary(i_pLibrary)
 {
 }

@@ -11,7 +11,11 @@
 #include <cstdlib>  // For system()
 #include <windows.h>
 
-void clearScreen();
-void Init();
-void UserInput();
-void MainMenu();
+
+namespace LibraryManagementSystem {
+	void clearScreen();
+	void Init();
+	void UserInput();
+	void MainMenu();
+}
+
