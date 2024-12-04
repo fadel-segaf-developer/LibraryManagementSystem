@@ -1,17 +1,10 @@
 #include "Library.h"
 
-Library::~Library()
-{
-    for (auto book : books)
-        delete book;
-    for (auto comic : comics)
-        delete comic;
-}
+
 
 std::unique_ptr<Author>& Library::addAuthor(const std::string& authorName)
 {
     if (authors.find(authorName) == authors.end()) {
-        //authors[authorName] = new Author(authorName);
         authors[authorName] = std::make_unique<Author>(authorName);
     }
     return authors[authorName];
@@ -42,7 +35,6 @@ void Library::findBooksByAuthor(const std::string& authorName) const
         {
             std::cout << authorName << " doesn't have any books yet.\n";
         }
-
     }
     else {
         std::cout << "Author '" << authorName << "' not found.\n";
