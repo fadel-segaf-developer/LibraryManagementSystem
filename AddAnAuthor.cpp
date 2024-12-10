@@ -8,7 +8,11 @@ AddAnAuthor::AddAnAuthor(const std::wstring i_name, std::shared_ptr<Library> i_p
 void AddAnAuthor::show()
 {
 	std::string AuthorName;
-	std::wcout << "====== Add an Author ======" << std::endl;
+	std::wcout << "======================== LIBRARY MANAGEMENT SYSTEM ========================" << std::endl;
+	std::wcout << "=                            ADD AN AUTHOR                                =" << std::endl;
+	std::wcout << "===========================================================================" << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 	std::wcout << "Enter the Author's name : ";
 	std::getline(std::cin, AuthorName);
 	m_pLibrary->addAuthor(AuthorName);

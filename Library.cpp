@@ -60,3 +60,26 @@ void Library::displayLibrary() const
         pair.second->displayWorks();
     }
 }
+
+int Library::getValidatedInput(const std::string& prompt)
+{
+    int value;
+    while (true)
+    {
+        std::cout << prompt;
+        std::cin >> value;
+        if (std::cin.fail())
+        {
+            std::cin.clear(); // Clear the error flag
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
+            std::cout << "\033[A\033[K";
+            std::cout << "\033[A\033[K";
+            std::cout << "Invalid input. Please enter a numeric value." << std::endl;
+        }
+        else
+        {
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear the newline
+            return value; // Valid input
+        }
+    }
+}

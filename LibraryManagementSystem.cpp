@@ -51,7 +51,10 @@ void LibraryManagementSystem::MainMenu()
 {
     activeMenuIndex = 99;
     clearScreen();
-    std::wcout << "======== Welcome to the library ========" << std::endl;
+    std::wcout << "======================== LIBRARY MANAGEMENT SYSTEM ========================" << std::endl;
+    std::wcout << "=  Fadel Achmad Assegaf(fadelsegaf.developer@gmail.com) - FRYS Developer  =" << std::endl;
+    std::wcout << "===========================================================================" << std::endl;
+    std::cout<< std::endl;
 
     std::map<Menu*, std::wstring> menuMap = Menu::getAllMenus();
     int menuSize = menuMap.size();
@@ -105,6 +108,10 @@ void LibraryManagementSystem::UserInput()
         else if (input == 99)
         {
             clearScreen();
+            std::wcout << "======================== LIBRARY MANAGEMENT SYSTEM ========================" << std::endl;
+            std::wcout << "=                             LIBRARY DATA                                =" << std::endl;
+            std::wcout << "===========================================================================" << std::endl;
+            std::cout << std::endl;
             libraryPtr->displayLibrary();
             std::cout << std::endl << "Press anything to go back to main menu..." << std::endl;
             _getch();

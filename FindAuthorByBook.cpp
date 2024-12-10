@@ -9,7 +9,9 @@ FindAuthorByBook::FindAuthorByBook(const std::wstring i_name, std::shared_ptr<Li
 void FindAuthorByBook::show()
 {
 	std::string bookTitle;
-	std::wcout << "===== Find an Author by book name =====" << std::endl;
+	std::wcout << "======================== LIBRARY MANAGEMENT SYSTEM ========================" << std::endl;
+	std::wcout << "=                      FIND AUTHOR BY BOOK                                =" << std::endl;
+	std::wcout << "===========================================================================" << std::endl;
 	std::wcout << "Enter the book's title : ";
 	std::cin >> bookTitle;
 	std::cin.ignore();
